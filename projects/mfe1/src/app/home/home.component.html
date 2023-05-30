@@ -1,0 +1,35 @@
+<h1>Project Screen</h1>
+
+<div>
+    <table>
+        <tr>
+            <th>Project ID</th>
+            <th>Project Name</th>
+            <th>Project Description</th>
+        </tr>
+        <tr *ngFor = "let items of projectsInfo">
+            <td>{{items.project_id}}</td>
+            <td>{{items.project_name}}</td>
+            <td><a>{{items.project_desc}}</a></td>
+        </tr>
+    </table>
+</div>
+
+<h1>Displying Employees Data</h1>
+<!-- <div>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Mobile</th>
+        </tr>
+        <tr *ngFor = "let items of employeesData">
+            <td>{{items.firstName}}</td>
+            <td>{{items.lastName}}</td>
+            <td>{{items.email}}</td>
+            <td>{{items.mobile}}</td>
+        </tr>
+    </table>
+</div> -->
+

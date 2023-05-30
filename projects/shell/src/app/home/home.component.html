@@ -1,0 +1,41 @@
+<h1>Employee Screen</h1>
+
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="firstName">First Name</label> &nbsp;&nbsp;
+        <input type="firstName" class="form-control" formControlName="firstName" placeholder="firstName">
+        <small class="form-text text-muted" *ngIf="!loginForm.controls.firstName?.valid && (loginForm.controls.firstName?.dirty
+            ||loginForm.controls.firstName?.touched)">
+          Minimum 3 Characters Required
+        </small>
+      </div><br>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name</label> &nbsp;&nbsp;
+        <input type="lastName" class="form-control" formControlName="lastName" placeholder="lastName">
+      </div><br>
+  
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label> &nbsp;&nbsp;
+        <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+        <small class="form-text text-muted" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+          Please enter email address.!
+        </small>
+  
+        <small class="form-text text-muted" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
+          Email address not well formed.!
+        </small>
+      </div><br>
+  
+      <div class="form-group">
+        <label for="mobile">Mobile</label> &nbsp;&nbsp;
+        <input type="mobile" class="form-control" formControlName="mobile" placeholder="mobile" max="10">
+        <small class="form-text text-muted" *ngIf="!loginForm.controls.mobile?.valid && (loginForm.controls.mobile?.dirty
+        ||loginForm.controls.mobile?.touched)">
+          Please enter valid mobile number
+        </small>
+      </div><br>
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+    </form>
+  </div>
